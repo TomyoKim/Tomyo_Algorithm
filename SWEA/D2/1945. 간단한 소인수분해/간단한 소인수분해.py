@@ -41,32 +41,23 @@ print(f)                                문자열 1개 출력하는 예제
 T = int(input())
 
 for t in range(1, T+1) :
-    n = int(input())
+    N = int(input())
+    a = 0; b = 0; c = 0; d = 0; e = 0
+    while(N != 1) :
+        if N % 2 == 0 :
+            a += 1
+            N = N/2
+        elif N % 3 == 0 :
+            b += 1
+            N = N/3
+        elif N % 5 == 0 :
+            c += 1
+            N = N/5
+        elif N % 7 == 0 :
+            d += 1
+            N = N/7
+        elif N % 11 == 0 :
+            e += 1
+            N = N/11
 
-    result = []
-
-    while n != 1 :
-        if not n%2 :
-            result.append(2)
-            n /= 2
-        elif not n%3 :
-            result.append(3)
-            n /= 3
-        elif not n%5 :
-            result.append(5)
-            n /= 5
-        elif not n%7 :
-            result.append(7)
-            n /= 7
-        elif not n%11 :
-            result.append(11)
-            n /= 11
-
-    print(f'#{t}', end = ' ')
-
-    for a in [2, 3, 5, 7, 11] :
-        if a == 11 :
-            print(f'{result.count(a)}')
-        else :
-            print(f'{result.count(a)}', end = ' ')
-
+    print("#{0} {1} {2} {3} {4} {5}".format(t, a, b, c, d, e))
